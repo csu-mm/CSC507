@@ -156,7 +156,7 @@ void read_one_row_at_a_time_process(char* fileName, char* outputFileName)
 	fclose(fpw);
 }
 
-// This is thread function that does processing for a part of the input data file (raw stock data file).
+// This is thread function that does processing for a part of the input data file.
 // Then writes the processed data into the output file synchronously.
 void* ProcessFile(void* arg)
 {
