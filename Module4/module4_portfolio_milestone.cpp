@@ -8,7 +8,7 @@
 	
 	Problem statement: Option #1
 	From the previous exercises, you have 2 files in your Linux installation: file1.txt 
-    and file2.txt, both with one million rows of random numbers. 
+                  and file2.txt, both with one million rows of random numbers. 
 	Using C, create a program to perform this task (as defined for the Bash script), 
 	with 3 methods of doing this: 
 	1. Read the entire contents of file1.txt into memory, then process each row.
