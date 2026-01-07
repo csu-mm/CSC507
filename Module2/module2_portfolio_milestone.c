@@ -1,3 +1,14 @@
+/*
+MS - Artificial Intelligence and Machine Learning
+Colorado State University Global
+( https://csuglobal.edu/academic-programs/graduate-degrees/masters-science-degree-artificial-intelligence-machine-learning )
+Course: CSC507 Foundations of Operating Systems
+Module 2: Portfolio Milestone
+Professor: Dr. Joseph Issa
+Created by Mukul Mondal
+November 20, 2025
+*/  
+
 #include <stdio.h>
 #include <stdlib.h>
 
