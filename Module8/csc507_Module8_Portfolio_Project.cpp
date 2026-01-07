@@ -18,6 +18,8 @@
 	file #3 is the sum of the corresponding line in hugefile1.txt and hugefile2.txt.
 */
 
+// Handling large(>10 GB) data files.
+//
 // cpp used instead of c for some feature level support of 
 // modern cpp and it's std lib usage.
 
