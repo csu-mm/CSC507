@@ -146,9 +146,9 @@ void read_one_row_at_a_time_process(char* fileName, char* outputFileName)
 		// process the line (for example, convert to number and double it)		
 		// and write it back to the output file
 		try  
-                                   {				
-		          long doubled = atol(line) * 2;				
-		          fprintf(fpw, "%ld\n", doubled);
+        {				
+		   long doubled = atol(line) * 2;				
+		   fprintf(fpw, "%ld\n", doubled);
 		} catch (const std::exception& e) { } // if exception then proceed to next line
 	}
 
@@ -237,22 +237,22 @@ void split_file_into_two_parts_process(char* fileName)
 	// max 2 threads needed as per requirement
 	int max_thread_count = 2;
 	std::vector<pthread_t> threads(max_thread_count);
-                  std::vector<int> ids(max_thread_count);
-                  int threadId = 0;
+    std::vector<int> ids(max_thread_count);
+    int threadId = 0;
 	threadId++;
-                 ids.push_back(threadId);                
-                 pthread_create(&threads[threadId], NULL, ProcessFile, firstHalfBuffer);
+    ids.push_back(threadId);                
+    pthread_create(&threads[threadId], NULL, ProcessFile, firstHalfBuffer);
 	
 	// read second half
 	char* secondHalfBuffer = (char*)malloc(sizeof(char) * (fileSize - halfSize + 1));
 	bytesRead = fread(secondHalfBuffer, sizeof(char), fileSize - halfSize, fp);
 	secondHalfBuffer[bytesRead] = '\0';
 	threadId++;
-                 ids.push_back(threadId);                
-                pthread_create(&threads[threadId], NULL, ProcessFile, secondHalfBuffer);
+    ids.push_back(threadId);                
+    pthread_create(&threads[threadId], NULL, ProcessFile, secondHalfBuffer);
 	
 	for (int i = 0; i < threadId; i++)         
-                       pthread_join(threads[i], NULL);
+        pthread_join(threads[i], NULL);
 
 	// other cleanup done in thread function.
 	fclose(fp);
